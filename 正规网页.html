@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>正规网页</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style: none;
+        }
+        html,body{
+            width: 100%;
+            height: 100%;
+        }
+        #content{
+            text-align: center;
+            width: 300px;
+            height: 300px;
+            border: 1px solid black;
+            position: fixed;
+            top: calc(50% - 150px);
+            left: calc(50% - 150px);
+        }
+        #content ul{
+            height: 200px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+        #content button{
+            width: 60px;
+            height: 30px;
+        }
+        label{
+            display: inline-block;
+            width: 100px;
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <div id="content">
+        <ul>
+            <li><label for="name">姓名：</label><input type="text" id="name"></li>
+            <li><label for="phone">手机号：</label><input type="text" id="phone"></li>
+            <li><label for="idcard">身份证：</label><input type="text" id="idcard"></li>
+            <li><label for="card">银行卡：</label><input type="text" id="card"></li>
+        </ul> 
+        <button id="submit">确定</button>
+    </div>
+    <script>
+        var sub=document.querySelector("#submit");
+        var body=document.querySelector("#content")
+        sub.onclick=function(){
+            if(name.value!==""&&phone.value!==""&&idcard.value!==""&&card.value!==""){
+                body.innerHTML="填写成功"
+                body.style.lineHeight="300px"
+            }else{
+                alert("填写失败")
+            }
+        }
+    </script>
+</body>
+</html>
